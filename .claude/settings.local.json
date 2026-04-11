@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "WebFetch(domain:girlsacademyleague.com)",
+      "WebFetch(domain:www.socalsoccerleague.org)",
+      "WebFetch(domain:surfsoccernation.com)",
+      "WebFetch(domain:a3sportsperformance.com)",
+      "WebFetch(domain:www.usclubsoccer.org)",
+      "WebFetch(domain:www.coastsoccerleague.org)",
+      "WebFetch(domain:socalnpl.com)",
+      "Bash(curl -sL \"https://surfsoccernation.com/wp-content/uploads/2024/02/SurfNation-logo-lockup-black-400.png\" -o \"C:/Users/Crayz/Sv-thunderv.3/public/logos/surf-nation.png\" --max-time 10)",
+      "Bash(curl -sL \"https://usclubsoccer.org/wp-content/uploads/2021/05/usclub-logo.png\" -o \"C:/Users/Crayz/Sv-thunderv.3/public/logos/us-club-soccer.png\" --max-time 10)",
+      "Bash(curl -sL \"https://ebjdh7qhjjr.exactdn.com/wp-content/uploads/2025/06/header.png\" -o \"C:/Users/Crayz/Sv-thunderv.3/public/logos/a3-sports.png\" --max-time 10)"
+    ]
+  }
+}
