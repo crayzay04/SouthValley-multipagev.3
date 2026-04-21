@@ -36,12 +36,12 @@ export default function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 flex-shrink-0 group">
             <div className="transition-transform duration-300 group-hover:scale-105">
-              <svg width="40" height="40" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-label="South Valley Surf crest">
-                <rect width="64" height="64" rx="6" fill="#0057B8" />
-                <path d="M10 44 Q32 20 54 44" stroke="white" strokeWidth="3" fill="none" opacity="0.6"/>
-                <path d="M6 50 Q32 26 58 50" stroke="white" strokeWidth="3" fill="none" opacity="0.4"/>
-                <text x="32" y="32" fontFamily="Arial Black,sans-serif" fontSize="18" fontWeight="900" fill="white" textAnchor="middle" dominantBaseline="middle">SVS</text>
-              </svg>
+              <img
+                src="/logos/surf-nation.png"
+                alt="South Valley Surf Soccer Club"
+                className="h-8 w-auto"
+                style={{ filter: 'brightness(0) invert(1)' }}
+              />
             </div>
             <div className="leading-tight">
               <div className="font-heading text-white text-xl tracking-widest leading-none transition-colors duration-200 group-hover:text-gray-200">South Valley</div>

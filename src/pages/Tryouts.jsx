@@ -10,7 +10,7 @@ export default function Tryouts() {
     <div>
       <HeroSection
         title="Join South Valley Surf"
-        subtitle="Bakersfield, CA — Tryouts for the 2025/26 Season"
+        subtitle="Bakersfield, CA — Tryouts for the 2025/26 Season — Dates Coming Soon"
         size="md"
       >
         <a
