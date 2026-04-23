@@ -5,6 +5,7 @@ import { commitments, divisionColors } from '../data/commitments';
 
 const years = [...new Set(commitments.map((c) => c.year))].sort((a, b) => b - a);
 const totalColleges = new Set(commitments.map((c) => c.college)).size;
+const firstYear = Math.min(...commitments.map((c) => c.year));
 
 function CommitCard({ commit, index }) {
   const div = divisionColors[commit.division] || divisionColors['D1'];
@@ -55,8 +56,8 @@ function CommitCard({ commit, index }) {
             <p className="text-white font-semibold text-sm">{commit.college}</p>
           </div>
 
-          {commit.position && (
-            <p className="text-gray-500 text-xs mt-1 uppercase tracking-widest">{commit.position}</p>
+          {commit.highSchool && (
+            <p className="text-gray-500 text-xs mt-1 uppercase tracking-widest">{commit.highSchool}</p>
           )}
         </div>
       </div>
@@ -91,11 +92,12 @@ export default function CollegeCommitments() {
       {/* Stats banner */}
       <section className="bg-[#0057B8] py-10">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-3 gap-4 text-center">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
             {[
-              { value: commitments.length, label: 'Players Committed' },
-              { value: totalColleges, label: 'Colleges & Universities' },
-              { value: years.length, label: 'Consecutive Years' },
+              { value: commitments.length + '+', label: 'Players Committed' },
+              { value: totalColleges + '+', label: 'Colleges & Universities' },
+              { value: years.length,           label: 'Classes Represented' },
+              { value: firstYear,              label: 'First Commitment Year' },
             ].map(({ value, label }) => (
               <div key={label}>
                 <div className="font-heading text-5xl text-white tracking-widest">{value}</div>
