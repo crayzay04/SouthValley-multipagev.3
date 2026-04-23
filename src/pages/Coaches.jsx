@@ -1,32 +1,38 @@
 import HeroSection from '../components/HeroSection';
 import CoachCard from '../components/CoachCard';
 import AnimatedSection from '../components/AnimatedSection';
-import { boysCoaches, girlsCoaches } from '../data/coaches';
+import { leadershipCoaches, staffCoaches } from '../data/coaches';
 import { Link } from 'react-router-dom';
+
+function SectionHeading({ eyebrow, title }) {
+  return (
+    <AnimatedSection variant="fadeUp" className="flex items-center gap-4 mb-10">
+      <div className="h-px flex-1 bg-gradient-to-r from-transparent to-gray-800" />
+      <div className="text-center">
+        <p className="text-[#0057B8] text-xs font-bold uppercase tracking-[0.3em] mb-1">{eyebrow}</p>
+        <h2 className="font-heading text-3xl sm:text-4xl text-white tracking-widest">{title}</h2>
+      </div>
+      <div className="h-px flex-1 bg-gradient-to-l from-transparent to-gray-800" />
+    </AnimatedSection>
+  );
+}
 
 export default function Coaches() {
   return (
     <div>
       <HeroSection
         title="Meet Our Coaching Staff"
-        subtitle="USSF-licensed coaches dedicated to developing players and individuals"
+        subtitle="USSF-licensed directors and dedicated coaches developing Bakersfield's next generation of players"
         size="md"
       />
 
-      {/* Boys Section */}
+      {/* Leadership */}
       <section className="bg-[#0a0a0a] py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_20%_50%,rgba(0,87,184,0.05)_0%,transparent_70%)] pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <AnimatedSection variant="fadeUp" className="flex items-center gap-4 mb-10">
-            <div className="h-px flex-1 bg-gradient-to-r from-transparent to-gray-800" />
-            <div className="text-center">
-              <p className="text-[#0057B8] text-xs font-bold uppercase tracking-[0.3em] mb-1">Staff</p>
-              <h2 className="font-heading text-3xl sm:text-4xl text-white tracking-widest">Boys Coaching Staff</h2>
-            </div>
-            <div className="h-px flex-1 bg-gradient-to-l from-transparent to-gray-800" />
-          </AnimatedSection>
+          <SectionHeading eyebrow="Club Leadership" title="Directors & Technical Staff" />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {boysCoaches.map((coach, i) => (
+            {leadershipCoaches.map((coach, i) => (
               <AnimatedSection key={coach.id} variant="fadeUp" style={{ transitionDelay: `${i * 100}ms` }}>
                 <CoachCard coach={coach} index={i} />
               </AnimatedSection>
@@ -35,22 +41,15 @@ export default function Coaches() {
         </div>
       </section>
 
-      {/* Girls Section */}
+      {/* Coaching Staff */}
       <section className="bg-black py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_80%_50%,rgba(0,87,184,0.05)_0%,transparent_70%)] pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <AnimatedSection variant="fadeUp" className="flex items-center gap-4 mb-10">
-            <div className="h-px flex-1 bg-gradient-to-r from-transparent to-gray-800" />
-            <div className="text-center">
-              <p className="text-[#0057B8] text-xs font-bold uppercase tracking-[0.3em] mb-1">Staff</p>
-              <h2 className="font-heading text-3xl sm:text-4xl text-white tracking-widest">Girls Coaching Staff</h2>
-            </div>
-            <div className="h-px flex-1 bg-gradient-to-l from-transparent to-gray-800" />
-          </AnimatedSection>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {girlsCoaches.map((coach, i) => (
-              <AnimatedSection key={coach.id} variant="fadeUp" style={{ transitionDelay: `${i * 100}ms` }}>
-                <CoachCard coach={coach} index={i} />
+          <SectionHeading eyebrow="Coaching Staff" title="Our Coaches" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {staffCoaches.map((coach, i) => (
+              <AnimatedSection key={coach.id} variant="fadeUp" style={{ transitionDelay: `${i * 60}ms` }}>
+                <CoachCard coach={coach} index={i} compact />
               </AnimatedSection>
             ))}
           </div>
