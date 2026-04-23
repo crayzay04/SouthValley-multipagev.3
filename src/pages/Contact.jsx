@@ -3,10 +3,12 @@ import HeroSection from '../components/HeroSection';
 import AnimatedSection from '../components/AnimatedSection';
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: '', email: '', subject: 'General Inquiry', message: '' });
+  const [form, setForm] = useState({ name: '', email: '', subject: 'General Inquiry', gender: '', ageGroup: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState('');
+
+  const AGE_GROUPS = ['U6','U7','U8','U9','U10','U11','U12','U13','U14','U15','U16','U17','U18/U19'];
 
   const handleChange = (e) => setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
 
@@ -62,7 +64,7 @@ export default function Contact() {
                   <h3 className="font-heading text-2xl text-black tracking-wide mb-2">Message Received!</h3>
                   <p className="text-gray-600">Thank you for reaching out. We'll get back to you within 1–2 business days.</p>
                   <button
-                    onClick={() => { setSubmitted(false); setForm({ name: '', email: '', subject: 'General Inquiry', message: '' }); }}
+                    onClick={() => { setSubmitted(false); setForm({ name: '', email: '', subject: 'General Inquiry', gender: '', ageGroup: '', message: '' }); }}
                     className="mt-6 px-6 py-2 bg-[#0057B8] text-white text-sm font-bold uppercase tracking-widest rounded-sm hover:bg-[#003f8a] hover:scale-105 transition-all active:scale-95"
                   >
                     Send Another
@@ -113,6 +115,53 @@ export default function Contact() {
                       <option>Sponsorship</option>
                       <option>Other</option>
                     </select>
+                  </div>
+
+                  {/* Player Information */}
+                  <div className="border border-gray-200 rounded-sm p-4 bg-gray-50 space-y-4">
+                    <p className="text-xs font-bold uppercase tracking-widest text-[#0057B8]">Player Information <span className="text-gray-400 font-normal normal-case tracking-normal">(optional)</span></p>
+
+                    {/* Boys / Girls toggle */}
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">Program</label>
+                      <div className="flex gap-3">
+                        {['Boys', 'Girls'].map((g) => (
+                          <button
+                            key={g}
+                            type="button"
+                            onClick={() => setForm((f) => ({ ...f, gender: f.gender === g ? '' : g }))}
+                            className={`px-5 py-2 rounded-sm text-sm font-bold uppercase tracking-wider border transition-all duration-200
+                              ${form.gender === g
+                                ? 'bg-[#0057B8] text-white border-[#0057B8] shadow-[0_0_12px_rgba(0,87,184,0.35)]'
+                                : 'bg-white text-gray-500 border-gray-300 hover:border-[#0057B8] hover:text-[#0057B8]'
+                              }`}
+                          >
+                            {g}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Age Group */}
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">Age Group</label>
+                      <div className="flex flex-wrap gap-2">
+                        {AGE_GROUPS.map((ag) => (
+                          <button
+                            key={ag}
+                            type="button"
+                            onClick={() => setForm((f) => ({ ...f, ageGroup: f.ageGroup === ag ? '' : ag }))}
+                            className={`px-3 py-1.5 rounded-sm text-xs font-bold uppercase tracking-wider border transition-all duration-200
+                              ${form.ageGroup === ag
+                                ? 'bg-[#0057B8] text-white border-[#0057B8] shadow-[0_0_10px_rgba(0,87,184,0.3)]'
+                                : 'bg-white text-gray-500 border-gray-300 hover:border-[#0057B8] hover:text-[#0057B8]'
+                              }`}
+                          >
+                            {ag}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
                   </div>
 
                   <div>
