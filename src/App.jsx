@@ -8,6 +8,7 @@ import Coaches from './pages/Coaches';
 import Contact from './pages/Contact';
 import News from './pages/News';
 import NewsPost from './pages/NewsPost';
+import NotFound from './pages/NotFound';
 
 function PageWrapper({ children }) {
   const [visible, setVisible] = useState(false);
@@ -53,7 +54,7 @@ export default function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/news" element={<News />} />
             <Route path="/news/:slug" element={<NewsPost />} />
-            <Route path="*" element={<Home />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </PageWrapper>
       </main>

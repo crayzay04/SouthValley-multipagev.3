@@ -33,70 +33,95 @@ const LightningIcon = () => (
 );
 
 const tiles = [
-  { label: 'Tryouts',     description: 'Join South Valley Surf',       to: '/tryouts',                       Icon: CalendarIcon },
-  { label: 'Tournaments', description: 'Compete at the highest level', to: '/news?filter=Tournament%20Results', Icon: TrophyIcon   },
-  { label: 'Clinics',     description: 'Skill development programs',   to: '/contact',                       Icon: StarIcon     },
-  { label: 'Our Coaches', description: 'Meet the coaching staff',      to: '/coaches',                       Icon: UserGroupIcon },
-  { label: 'Surf Select', description: 'National ID program',          to: '/contact',                       Icon: LightningIcon },
-  { label: 'Surf Nation', description: 'Part of something bigger',     to: '/contact',                       Icon: GlobeIcon    },
+  { label: 'Tryouts',     description: 'Join South Valley Surf',       to: '/tryouts',                          Icon: CalendarIcon },
+  { label: 'Tournaments', description: 'Compete at the highest level', to: '/news?filter=Tournament%20Results',  Icon: TrophyIcon   },
+  { label: 'Clinics',     description: 'Skill development programs',   to: '/contact',                          Icon: StarIcon     },
+  { label: 'Our Coaches', description: 'Meet the coaching staff',      to: '/coaches',                          Icon: UserGroupIcon },
+  { label: 'Surf Select', description: 'National ID program',          href: 'https://surfsoccernation.com/surf-select/', Icon: LightningIcon },
+  { label: 'Surf Nation', description: 'Part of something bigger',     href: 'https://surfsoccer.com',          Icon: GlobeIcon    },
 ];
 
 export default function QuickLinkGrid() {
   const [gridRef, inView] = useInView({ threshold: 0.08 });
 
+  const tileClassName = `group relative bg-[#111827] border border-gray-800/60 border-t-[3px] border-t-[#0057B8] rounded-sm p-6 flex flex-col items-center text-center overflow-hidden
+    transition-all duration-300 ease-out
+    hover:-translate-y-2
+    hover:shadow-[0_20px_40px_rgba(0,87,184,0.22),0_8px_20px_rgba(0,0,0,0.5)]
+    hover:border-[#0057B8]/40
+  `;
+
+  const tileInner = (Icon, label, description, i) => (
+    <>
+      {/* Radial glow on hover */}
+      <div className="
+        absolute inset-0 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300
+        bg-[radial-gradient(ellipse_at_center,rgba(0,87,184,0.12)_0%,transparent_70%)]
+      " />
+
+      {/* Icon */}
+      <div className="
+        relative z-10 p-3 rounded-full mb-3
+        bg-[#0057B8]/10 border border-[#0057B8]/20
+        text-[#0057B8] group-hover:text-white
+        group-hover:bg-[#0057B8] group-hover:border-[#0057B8]
+        transition-all duration-300
+        group-hover:shadow-[0_0_16px_rgba(0,87,184,0.5)]
+      ">
+        <Icon />
+      </div>
+
+      <div className="relative z-10 font-heading text-white text-xl tracking-widest leading-tight mb-1 group-hover:text-white transition-colors duration-200">
+        {label}
+      </div>
+      <div className="relative z-10 text-gray-500 text-xs group-hover:text-gray-300 transition-colors duration-200">
+        {description}
+      </div>
+
+      {/* Bottom arrow */}
+      <div className="
+        relative z-10 mt-3 text-[#0057B8] text-xs font-semibold uppercase tracking-wider
+        opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0
+        transition-all duration-200
+      ">
+        Explore →
+      </div>
+    </>
+  );
+
   return (
     <div ref={gridRef} className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-      {tiles.map(({ label, description, to, Icon }, i) => (
-        <Link
-          key={label}
-          to={to}
-          className="group relative bg-[#111827] border border-gray-800/60 border-t-[3px] border-t-[#0057B8] rounded-sm p-6 flex flex-col items-center text-center overflow-hidden
-            transition-all duration-300 ease-out
-            hover:-translate-y-2
-            hover:shadow-[0_20px_40px_rgba(0,87,184,0.22),0_8px_20px_rgba(0,0,0,0.5)]
-            hover:border-[#0057B8]/40
-          "
-          style={{
-            opacity: inView ? 1 : 0,
-            transform: inView ? 'translateY(0)' : 'translateY(20px)',
-            transition: `opacity 0.5s ease ${i * 70}ms, transform 0.5s ease ${i * 70}ms, box-shadow 0.3s ease, border-color 0.3s ease`,
-          }}
-        >
-          {/* Radial glow on hover */}
-          <div className="
-            absolute inset-0 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300
-            bg-[radial-gradient(ellipse_at_center,rgba(0,87,184,0.12)_0%,transparent_70%)]
-          " />
-
-          {/* Icon */}
-          <div className="
-            relative z-10 p-3 rounded-full mb-3
-            bg-[#0057B8]/10 border border-[#0057B8]/20
-            text-[#0057B8] group-hover:text-white
-            group-hover:bg-[#0057B8] group-hover:border-[#0057B8]
-            transition-all duration-300
-            group-hover:shadow-[0_0_16px_rgba(0,87,184,0.5)]
-          ">
-            <Icon />
-          </div>
-
-          <div className="relative z-10 font-heading text-white text-xl tracking-widest leading-tight mb-1 group-hover:text-white transition-colors duration-200">
-            {label}
-          </div>
-          <div className="relative z-10 text-gray-500 text-xs group-hover:text-gray-300 transition-colors duration-200">
-            {description}
-          </div>
-
-          {/* Bottom arrow */}
-          <div className="
-            relative z-10 mt-3 text-[#0057B8] text-xs font-semibold uppercase tracking-wider
-            opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0
-            transition-all duration-200
-          ">
-            Explore →
-          </div>
-        </Link>
-      ))}
+      {tiles.map(({ label, description, to, href, Icon }, i) => {
+        const style = {
+          opacity: inView ? 1 : 0,
+          transform: inView ? 'translateY(0)' : 'translateY(20px)',
+          transition: `opacity 0.5s ease ${i * 70}ms, transform 0.5s ease ${i * 70}ms, box-shadow 0.3s ease, border-color 0.3s ease`,
+        };
+        if (href) {
+          return (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={tileClassName}
+              style={style}
+            >
+              {tileInner(Icon, label, description, i)}
+            </a>
+          );
+        }
+        return (
+          <Link
+            key={label}
+            to={to}
+            className={tileClassName}
+            style={style}
+          >
+            {tileInner(Icon, label, description, i)}
+          </Link>
+        );
+      })}
     </div>
   );
 }

@@ -63,23 +63,10 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Newsletter */}
+          {/* Stay Updated */}
           <div>
             <h4 className="font-heading text-lg tracking-widest text-white mb-4">Stay Updated</h4>
-            <p className="text-gray-400 text-sm mb-3">Get the latest news and announcements from South Valley Surf.</p>
-            <form onSubmit={(e) => e.preventDefault()} className="flex flex-col gap-2">
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="bg-gray-900 border border-gray-700 text-white text-sm px-3 py-2 rounded-sm focus:outline-none focus:border-[#0057B8] placeholder-gray-500"
-              />
-              <button
-                type="submit"
-                className="bg-[#0057B8] hover:bg-[#003f8a] text-white text-sm font-bold uppercase tracking-wider px-4 py-2 rounded-sm transition-colors"
-              >
-                Subscribe
-              </button>
-            </form>
+            <p className="text-gray-400 text-sm leading-relaxed">Stay tuned for club news and updates.</p>
           </div>
 
           {/* Contact */}

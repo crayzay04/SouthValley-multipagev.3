@@ -68,18 +68,15 @@ export default function Navbar() {
                 {label}
               </NavLink>
             ))}
-            <a
-              href="#"
-              onClick={(e) => e.preventDefault()}
+            <span
+              title="Member portal coming soon"
               className="
                 ml-1 px-4 py-2 bg-[#0057B8] text-white text-sm font-bold uppercase tracking-wider rounded-sm
-                transition-all duration-200
-                hover:bg-[#003f8a] hover:shadow-[0_0_16px_rgba(0,87,184,0.5)] hover:scale-105
-                active:scale-95
+                opacity-50 cursor-not-allowed pointer-events-none
               "
             >
               Member Login
-            </a>
+            </span>
           </nav>
 
           {/* Mobile Hamburger */}
@@ -120,13 +117,12 @@ export default function Navbar() {
               </svg>
             </NavLink>
           ))}
-          <a
-            href="#"
-            onClick={(e) => e.preventDefault()}
-            className="mt-3 px-4 py-2.5 bg-[#0057B8] text-white text-sm font-bold uppercase tracking-wider rounded-sm text-center hover:bg-[#003f8a] transition-colors"
+          <span
+            title="Member portal coming soon"
+            className="mt-3 px-4 py-2.5 bg-[#0057B8] text-white text-sm font-bold uppercase tracking-wider rounded-sm text-center opacity-50 cursor-not-allowed pointer-events-none block"
           >
             Member Login
-          </a>
+          </span>
         </nav>
       </div>
     </header>

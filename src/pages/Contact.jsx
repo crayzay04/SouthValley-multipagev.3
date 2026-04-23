@@ -226,19 +226,20 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Map Placeholder */}
+      {/* Map */}
       <section className="bg-gray-100 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection variant="scaleIn">
-            <div className="bg-gray-200 rounded-sm h-64 flex items-center justify-center group hover:bg-gray-300 transition-colors duration-300 cursor-default">
-              <div className="text-center text-gray-400 group-hover:text-gray-500 transition-colors duration-300">
-                <svg className="w-12 h-12 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-                </svg>
-                <p className="font-heading text-xl tracking-widest">Map Coming Soon</p>
-                <p className="text-sm mt-1">5001 Fruitvale Avenue, Bakersfield, CA 93308</p>
-              </div>
-            </div>
+            <iframe
+              src="https://www.google.com/maps?q=Rudd+Ave,+Bakersfield,+CA+93314&output=embed"
+              width="100%"
+              height="400"
+              style={{ border: 0, borderRadius: 12 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="South Valley Surf location"
+            />
           </AnimatedSection>
         </div>
       </section>

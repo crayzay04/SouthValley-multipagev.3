@@ -13,17 +13,14 @@ export default function Tryouts() {
         subtitle="Bakersfield, CA — Tryouts for the 2025/26 Season — Dates Coming Soon"
         size="md"
       >
-        <a
-          href="#"
-          onClick={(e) => e.preventDefault()}
+        <span
           className="
             inline-block px-8 py-3.5 bg-[#0057B8] text-white font-bold uppercase tracking-widest rounded-sm text-sm
-            transition-all duration-200
-            hover:bg-[#003f8a] hover:shadow-[0_0_24px_rgba(0,87,184,0.55)] hover:scale-105 active:scale-95
+            opacity-50 cursor-not-allowed pointer-events-none
           "
         >
-          Pre-Register Now
-        </a>
+          Registration Coming Soon
+        </span>
       </HeroSection>
 
       {/* Intro */}
@@ -85,17 +82,14 @@ export default function Tryouts() {
             <p className="text-gray-500 text-sm mb-6">
               Exact dates will be announced — pre-register now to be notified immediately.
             </p>
-            <a
-              href="#"
-              onClick={(e) => e.preventDefault()}
+            <span
               className="
                 inline-block px-8 py-3.5 bg-[#0057B8] text-white font-bold uppercase tracking-widest rounded-sm text-sm
-                transition-all duration-200
-                hover:bg-[#003f8a] hover:shadow-[0_0_24px_rgba(0,87,184,0.5)] hover:scale-105 active:scale-95
+                opacity-50 cursor-not-allowed pointer-events-none
               "
             >
-              Pre-Register Now
-            </a>
+              Registration Coming Soon
+            </span>
           </AnimatedSection>
         </div>
       </section>
