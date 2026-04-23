@@ -2,9 +2,9 @@ export const boysCoaches = [
   {
     id: 1,
     name: 'Jason Carter',
-    title: 'Head Coach — B2011',
+    title: 'President & Director of Coaching — B2011',
     initials: 'JC',
-    bio: 'Coach Carter brings years of competitive coaching experience to the B2011 squad. His development-first approach and attention to tactical detail have produced results at the highest levels of SoCal NPL competition.',
+    bio: 'Coach Carter serves as Club President and Director of Coaching, bringing extensive competitive experience to South Valley Surf. He leads the B2011 squad and has overseen the club\'s growth at the highest levels of SoCal NPL competition, building a development-first culture that prepares players for the next level.',
     licensed: true,
   },
   {
@@ -12,26 +12,26 @@ export const boysCoaches = [
     name: 'Jay Gore',
     title: 'Boys Head Coach',
     initials: 'JG',
-    bio: 'Coach Gore is a dedicated coach committed to player development at every level. He brings passion and professionalism to every training session and match.',
+    bio: 'Coach Gore is a cornerstone of the South Valley Surf boys program, committed to player development at every age group. He brings passion, tactical discipline, and professionalism to every training session and match, helping players reach their full potential on and off the field.',
     licensed: true,
   },
 ];
 
 export const girlsCoaches = [
   {
-    id: 4,
+    id: 3,
     name: 'Kristy Walker',
     title: 'Girls Academy Director',
     initials: 'KW',
-    bio: 'Kristy Walker serves as Girls Academy Director and is a key figure in the Girls Academy network. She has coached at national ID events and helped develop multiple players who have been scouted by US Youth National Team staff.',
+    bio: 'Kristy Walker is the Girls Academy Director and a key leader in the Girls Academy network. She has been selected to coach match-play at GA national ID events and has helped develop multiple players who have earned college scholarships and been scouted by US Youth National Team staff.',
     licensed: true,
   },
   {
-    id: 5,
+    id: 4,
     name: 'Lorne Howlett',
     title: 'Head Coach — G2010',
     initials: 'LH',
-    bio: "Coach Howlett co-leads the G2010 squad that qualified for the Girls Academy National Finals. His calm demeanor and technical coaching have been instrumental in the team's success.",
+    bio: "Coach Howlett leads the G2010 squad that qualified for the Girls Academy National Finals. His calm demeanor, technical coaching, and ability to build team cohesion have been central to the program's success at the highest levels of girls' youth soccer.",
     licensed: true,
   },
 ];

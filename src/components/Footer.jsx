@@ -4,6 +4,7 @@ const quickLinks = [
   { to: '/', label: 'Home' },
   { to: '/tryouts', label: 'Tryouts' },
   { to: '/coaches', label: 'Coaches' },
+  { to: '/college-commitments', label: 'College Commitments' },
   { to: '/news', label: 'News' },
   { to: '/contact', label: 'Contact Us' },
 ];
